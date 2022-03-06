@@ -17,9 +17,7 @@ nav:
   - Contributing: contributing.md
   - Code of Conduct: code_of_conduct.md
   - Coverage report: coverage.md
-{%- if author_username == "pawamoy" %}
-- Author's website: https://{{ author_username }}.{{ repository_provider.rsplit('.', 1)[0] }}.io/
-{%- endif %}
+  - mkdocstrings: https://mkdocstrings.github.io/
 
 theme:
   name: material
@@ -74,8 +72,20 @@ plugins:
 - coverage
 - section-index
 - mkdocstrings:
+    handlers:
+      python:
+        import:
+        - https://docs.python.org/3/objects.inv
+        - https://mkdocstrings.github.io/objects.inv
+        selection:
+          docstring_style: google
+          docstring_options:
+            ignore_init_summary: yes
+        rendering:
+          show_submodules: no
+          merge_init_into_class: yes
     watch:
-    - src/{{ python_package_import_name }}
+    - src/mkdocstrings_handlers
 
 extra:
   social:

@@ -95,7 +95,9 @@ classifiers = [
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
-dependencies = []
+dependencies = [
+    "mkdocstrings>=0.18",
+]
 
 [project.urls]
 Homepage = "https://{{ repository_namespace }}.{{ repository_provider.rsplit('.', 1)[0] }}.io/{{ repository_name }}"
@@ -108,9 +110,6 @@ Gitter = "https://gitter.im/{{ repository_name }}/community"
 {%- if repository_provider == "github.com" %}
 Funding = "https://{{ repository_provider }}/sponsors/{{ repository_namespace }}"
 {%- endif %}
-
-[project.scripts]
-{{ python_package_command_line_name }} = "{{ python_package_import_name }}.cli:main"
 
 [tool.pdm]
 version = {use_scm = true}
@@ -125,7 +124,7 @@ docs = [
     "mkdocs-literate-nav>=0.4",
     "mkdocs-material>=7.3",
     "mkdocs-section-index>=0.3",
-    "mkdocstrings>=0.16",
+    "mkdocstrings[python]>=0.18",
     "toml>=0.10",
 ]
 format = [
@@ -134,12 +133,12 @@ format = [
     "isort>=5.10",
 ]
 maintain = [
-    # TODO: remove this section when git-changelog is more powerful
     "git-changelog>=0.4",
 ]
 quality = [
     "darglint>=1.8",
     "flake8-bandit>=2.1",
+    "bandit<1.7.3",  # TODO: remove once flake8-bandit supports latest
     "flake8-black>=0.2",
     "flake8-bugbear>=21.9",
     "flake8-builtins>=1.5",
@@ -177,5 +176,5 @@ multi_line_output = 3
 force_single_line = false
 balanced_wrapping = true
 default_section = "THIRDPARTY"
-known_first_party = "{{ python_package_import_name }}"
+known_first_party = "mkdocstrings_handlers"
 include_trailing_comma = true

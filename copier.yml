@@ -31,13 +31,19 @@ _migrations:
     - rm -rf docs/reference
 
 # PROMPT --------------------------------
+language:
+  type: str
+  help: The language this handler operates for
+
 project_name:
   type: str
   help: Your project name
+  default: "mkdocstrings-{{ language|lower }}"
 
 project_description:
   type: str
   help: Your project description
+  default: "A {{ language|title }} handler for mkdocstrings."
 
 author_fullname:
   type: str
@@ -82,7 +88,7 @@ copyright_holder_email:
 copyright_date:
   type: str
   help: The copyright date
-  default: "2021"
+  default: "2022"
 
 copyright_license:
   type: str
@@ -130,15 +136,5 @@ python_package_distribution_name:
 
 python_package_import_name:
   type: str
-  help: Your Python package import name (for `import NAME` in Python code)
-  default: "{{ project_name|lower|replace('-', '_')|replace(' ', '_') }}"
-
-python_package_command_line_name:
-  type: str
-  help: Your CLI name if any (for use in the shell)
-  default: "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
-
-use_precommit:
-  type: bool
-  help: Do you want to use pre-commit?
-  default: no
+  help: Your handler import name (for `import mkdocstrings_handlers.NAME` in Python code)
+  default: "{{ language|lower|replace('-', '_')|replace(' ', '_') }}"

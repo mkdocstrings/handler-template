@@ -21,8 +21,7 @@ restore_previous_python_version() {
 }
 
 if [ -n "${PYTHON_VERSIONS}" ]; then
-    old_python_version="$(pdm config python.path 2>/dev/null)" || pdm use -f python
-    if [ -n "${old_python_version}" ]; then
+    if old_python_version="$(pdm config python.path 2>/dev/null)"; then
         echo "> Currently selected Python version: ${old_python_version##*/}"
         trap "restore_previous_python_version ${old_python_version}" EXIT
     fi

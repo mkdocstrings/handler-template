@@ -114,6 +114,7 @@ Funding = "https://{{ repository_provider }}/sponsors/{{ repository_namespace }}
 [tool.pdm]
 version = {use_scm = true}
 package-dir = "src"
+editable-backend = "editables"
 
 [tool.pdm.dev-dependencies]
 duty = ["duty>=0.7"]
@@ -155,7 +156,6 @@ tests = [
     "pytest>=6.2",
     "pytest-cov>=3.0",
     "pytest-randomly>=3.10",
-    "pytest-sugar>=0.9",
     "pytest-xdist>=2.4",
 ]
 typing = [

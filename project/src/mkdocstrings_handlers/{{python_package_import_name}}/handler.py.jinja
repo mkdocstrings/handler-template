@@ -46,9 +46,33 @@ class {{ language|title }}Handler(BaseHandler):
     """  # noqa: E501
 
     def collect(self, identifier: str, config: dict) -> CollectorItem:  # noqa: D102
+        """Collect data given an identifier and selection configuration.
+
+        In the implementation, you typically call a subprocess that returns JSON, and load that JSON again into
+        a Python dictionary for example, though the implementation is completely free.
+
+        Arguments:
+            identifier: An identifier that was found in a markdown document for which to collect data. For example,
+                in Python, it would be 'mkdocstrings.handlers' to collect documentation about the handlers module.
+                It can be anything that you can feed to the tool of your choice.
+            config: Configuration options for the tool you use to collect data. Typically called "selection" because
+                these options modify how the objects or documentation are "selected" in the source code.
+
+        Returns:
+            Anything you want, as long as you can feed it to the renderer's `render` method.
+        """
         raise CollectionError("Implement me!")
 
     def render(self, data: CollectorItem, config: dict) -> str:  # noqa: D102
+        """Render a template using provided data and configuration options.
+
+        Arguments:
+            data: The data to render that was collected above in `collect()`.
+            config: The rendering options.
+
+        Returns:
+            The rendered template as HTML.
+        """
         raise PluginError("Implement me!")
 
         # final_config = {**self.default_config, **config}
@@ -59,7 +83,14 @@ class {{ language|title }}Handler(BaseHandler):
         # )
 
     def update_env(self, md: Markdown, config: dict) -> None:  # noqa: D102 (ignore missing docstring)
-        super().update_env(md, config)
+        """Update the Jinja environment with any custom settings/filters/options for this handler.
+
+        Arguments:
+            md: The Markdown instance. Useful to add functions able to convert Markdown into the environment filters.
+            config: Configuration options for `mkdocs` and `mkdocstrings`, read from `mkdocs.yml`. See the source code
+                of [mkdocstrings.plugin.MkdocstringsPlugin.on_config][] to see what's in this dictionary.
+        """
+        super().update_env(md, config) # Add some mkdocstrings default filters such as highlight and convert_markdown
         self.env.trim_blocks = True
         self.env.lstrip_blocks = True
         self.env.keep_trailing_newline = False

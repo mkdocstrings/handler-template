@@ -55,8 +55,8 @@ class {{ language|title }}Handler(BaseHandler):
             identifier: An identifier that was found in a markdown document for which to collect data. For example,
                 in Python, it would be 'mkdocstrings.handlers' to collect documentation about the handlers module.
                 It can be anything that you can feed to the tool of your choice.
-            config: Configuration options for the tool you use to collect data. Typically called "selection" because
-                these options modify how the objects or documentation are "selected" in the source code.
+            config: All configuration options for this handler either defined globally in `mkdocs.yml` or
+                locally overridden in an identifier block by the user.
 
         Returns:
             Anything you want, as long as you can feed it to the renderer's `render` method.
@@ -68,7 +68,8 @@ class {{ language|title }}Handler(BaseHandler):
 
         Arguments:
             data: The data to render that was collected above in `collect()`.
-            config: The rendering options.
+            config: All configuration options for this handler either defined globally in `mkdocs.yml` or
+                locally overridden in an identifier block by the user.
 
         Returns:
             The rendered template as HTML.

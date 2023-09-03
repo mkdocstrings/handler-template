@@ -1,29 +1,16 @@
 #!/usr/bin/env bash
 set -eu
-export TESTING=true
+
+. tests/helpers.sh
 
 output=tests/tmp
-
-echo "///////////////////////////////////////////"
-echo "             TAGGING TEMPLATE COPY"
-echo "///////////////////////////////////////////"
-echo
-template=$(mktemp -d)
-cp -rf . "${template}"
-(
-  cd "${template}" || exit 1
-  git add . -A || true
-  git commit -m "test" || true
-  git tag 99.99.99
-)
-echo "Template copy located at ${template}"
 
 echo
 echo "///////////////////////////////////////////"
 echo "             GENERATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier -f "${template}" "${output}" \
+copier copy -f "${template}" "${output}" \
   -d language="bestlanguage" \
   -d author_fullname="Timothee Mazzucotelli" \
   -d author_username="pawamoy" \
@@ -38,13 +25,16 @@ echo "             TESTING PROJECT"
 echo "///////////////////////////////////////////"
 echo
 echo ">>> Creating initial commit (feat)"
+sed -Ei 's/(_commit: [^-]+)-.*$/\1/' .copier-answers.yml
 git add -A .
 git commit -am "feat: Initial commit"
 git tag v0.1.0
 echo
-echo ">>> Setting up Python environments"
-make --no-print-directory setup
-echo
+if [ -z "${SKIP_SETUP:-}" ]; then
+    echo ">>> Setting up Python environments"
+    make --no-print-directory setup
+    echo
+fi
 echo ">>> Running initial quality checks"
 make --no-print-directory check
 echo
@@ -73,12 +63,4 @@ echo "///////////////////////////////////////////"
 echo "             UPDATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier -f update
-
-echo
-echo "///////////////////////////////////////////"
-echo "             CLEANUP"
-echo "///////////////////////////////////////////"
-echo
-echo ">>> Removing ${template}"
-rm -rf "${template}"
+copier update -f --UNSAFE

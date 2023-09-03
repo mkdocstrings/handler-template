@@ -1,3 +1,5 @@
+.PHONY: $(MAKECMDGOALS)
+
 clean:
 	@rm -rf tests/tmp
 
@@ -5,14 +7,23 @@ cleantests:
 	@rm -rf tests/tmp/.git
 	@rm -rf tests/tmp/empty
 
+docs:
+	@mkdocs serve
+
+docs-deploy:
+	@mkdocs gh-deploy
+
+gen generate:
+	@bash -c 'source tests/helpers.sh && generate ${PWD} tests/tmp'
+
+reset-history: gen
+	@./reset-history.sh
+
 test: cleantests
 	@./runtests.sh
 
-update-deps:
-	@./update-deps.sh
-
 changelog:
-	@git-changelog . -s angular -t keepachangelog -o CHANGELOG.md
+	@git-changelog -Tbio CHANGELOG.md -c angular
 
 release:
 	@git add CHANGELOG.md
@@ -20,3 +31,25 @@ release:
 	@git tag $(version)
 	@git push
 	@git push --tags
+
+DUTIES = \
+	test-changelog \
+	test-check \
+	test-check-api \
+	test-check-dependencies \
+	test-check-docs \
+	test-check-quality \
+	test-check-types \
+	test-clean \
+	test-coverage \
+	test-docs \
+	test-docs-deploy \
+	test-format \
+	test-help \
+	test-lock \
+	test-release \
+	test-setup \
+	test-test
+
+$(DUTIES):
+	@cd tests/tmp && make $(subst test-,,$@)

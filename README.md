@@ -17,7 +17,7 @@ pipx install copier --pip-args=--pre
 Generate a handler:
 
 ```bash
-copier "gh:mkdocstrings/handler-template" /path/to/your/handler
+copier copy --trust gh:mkdocstrings/handler-template /path/to/your/handler
 ```
 
 See the [documentation](https://pawamoy.github.io/copier-pdm)

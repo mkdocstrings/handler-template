@@ -24,7 +24,7 @@ echo ">>> Creating initial commit (feat)"
 sed -Ei 's/(_commit: [^-]+)-.*$/\1/' .copier-answers.yml
 git add -A .
 git commit -am "feat: Initial commit"
-git tag v0.1.0
+git tag 0.1.0
 echo
 if [ -z "${SKIP_SETUP:-}" ]; then
     echo ">>> Setting up Python environments"
@@ -49,8 +49,8 @@ echo ">>> Updating changelog and releasing version"
 make --no-print-directory changelog release version=0.1.1
 echo
 echo ">>> Checking changelog's contents"
-pdm run failprint -- grep 'v0\.1\.0' CHANGELOG.md
-pdm run failprint -- grep 'v0\.1\.1' CHANGELOG.md
+pdm run failprint -- grep '0\.1\.0' CHANGELOG.md
+pdm run failprint -- grep '0\.1\.1' CHANGELOG.md
 pdm run failprint -- grep 'Features' CHANGELOG.md
 pdm run failprint -- grep 'Bug Fixes' CHANGELOG.md
 

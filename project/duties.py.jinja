@@ -153,6 +153,7 @@ def check_types(ctx: Context) -> None:
     Parameters:
         ctx: The context instance (passed automatically).
     """
+    os.environ["MYPYPATH"] = "src"
     ctx.run(
         mypy.run(*PY_SRC_LIST, config_file="config/mypy.ini"),
         title=pyprefix("Type-checking"),
@@ -171,9 +172,9 @@ def check_api(ctx: Context) -> None:
 
     griffe_check = lazy(g_check, name="griffe.check")
     ctx.run(
-        griffe_check("{{ python_package_import_name }}", search_paths=["src"], color=True),
+        griffe_check("mkdocstrings_handlers.{{ python_package_import_name }}", search_paths=["src"], color=True),
         title="Checking for API breaking changes",
-        command="griffe check -ssrc {{ python_package_import_name }}",
+        command="griffe check -ssrc mkdocstrings_handlers.{{ python_package_import_name }}",
         nofail=True,
     )
 

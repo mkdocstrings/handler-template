@@ -10,14 +10,10 @@ echo "///////////////////////////////////////////"
 echo "             GENERATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier copy -f "${template}" "${output}" \
-  -d language="bestlanguage" \
-  -d author_fullname="Timothee Mazzucotelli" \
-  -d author_username="pawamoy" \
-  -d author_email="pawamoy@pm.me"
+generate "${PWD}" "${output}"
 cd "${output}"
 git init .
-git remote add origin https://github.com/pawamoy/pawamoy-testing
+git remote add origin git@github.com:pawamoy/pawamoy-testing
 
 echo
 echo "///////////////////////////////////////////"

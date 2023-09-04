@@ -17,7 +17,7 @@ _skip_if_exists:
 # PROMPT --------------------------------
 language:
   type: str
-  help: The language this handler operates for
+  help: The language this handler operates for (e.g. "Ada" or "Brainfuck")
 
 project_name:
   type: str

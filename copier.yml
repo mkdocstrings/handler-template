@@ -123,3 +123,8 @@ python_package_import_name:
   type: str
   help: Your handler import name (for `import mkdocstrings_handlers.NAME` in Python code)
   default: "{{ language | slugify('_') }}"
+
+insiders:
+  type: bool
+  help: Does this project have an Insiders version?
+  default: false

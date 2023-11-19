@@ -12,6 +12,7 @@ echo "///////////////////////////////////////////"
 echo
 generate "${PWD}" "${output}"
 cd "${output}"
+cat .copier-answers.yml
 git init .
 git remote add origin git@github.com:pawamoy/pawamoy-testing
 
@@ -21,7 +22,14 @@ echo "             TESTING PROJECT"
 echo "///////////////////////////////////////////"
 echo
 echo ">>> Creating initial commit (feat)"
-sed -Ei 's/(_commit: [^-]+)-.*$/\1/' .copier-answers.yml
+python <<EOF
+import re
+with open(".copier-answers.yml") as file:
+    answers = file.read()
+with open(".copier-answers.yml", "w") as file:
+    file.write(re.sub(r"(_commit: [^-]+)-.*", r"\1", answers))
+EOF
+cat .copier-answers.yml
 git add -A .
 git commit -am "feat: Initial commit"
 git tag 0.1.0
@@ -59,4 +67,4 @@ echo "///////////////////////////////////////////"
 echo "             UPDATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier update -f --UNSAFE
+copier update -f --trust

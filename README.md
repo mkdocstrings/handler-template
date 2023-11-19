@@ -11,7 +11,8 @@ Install `pipx` and `copier`:
 
 ```bash
 pip install --user pipx
-pipx install copier --pip-args=--pre
+pipx install copier
+pipx inject copier copier-templates-extensions
 ```
 
 Generate a handler:

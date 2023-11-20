@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from pathlib import Path
 
     from mkdocstrings.plugin import MkdocstringsPlugin
-    from mkdocstrings_handlers.{{python_package_import_name}}.handler import {{ language.title().replace(" ", "") }}Handler
+    from mkdocstrings_handlers.{{ python_package_import_name }}.handler import {{ language.title().replace(" ", "") }}Handler
 
 
 @pytest.fixture(name="mkdocs_conf")

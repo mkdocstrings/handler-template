@@ -201,7 +201,11 @@ def docs_deploy(ctx: Context) -> None:
         {%- if insiders %}
         origin = ctx.run("git config --get remote.origin.url", silent=True)
         if "{{ author_username }}-insiders/{{ insiders_repository_name }}" in origin:
-            ctx.run("git remote add upstream git@github.com:{{ repository_namespace }}/{{ repository_name }}", silent=True, nofail=True)
+            ctx.run(
+                "git remote add upstream git@github.com:{{ repository_namespace }}/{{ repository_name }}",
+                silent=True,
+                nofail=True,
+            )
             ctx.run(
                 mkdocs.gh_deploy(remote_name="upstream", force=True),
                 title="Deploying documentation",

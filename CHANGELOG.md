@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.2](https://github.com/mkdocstrings/handler-template/releases/tag/0.2.2) - 2023-11-20
+
+<small>[Compare with 0.2.1](https://github.com/mkdocstrings/handler-template/compare/0.2.1...0.2.2)</small>
+
+### Code Refactoring
+
+- Update from upstream template, fix for namespace package ([f55a84f](https://github.com/mkdocstrings/handler-template/commit/f55a84f065d6bbe4148aa5df68ce6918e6b432cc) by Timothée Mazzucotelli).
+
 ## [0.2.1](https://github.com/mkdocstrings/handler-template/releases/tag/0.2.1) - 2023-09-04
 
 <small>[Compare with 0.2.0](https://github.com/mkdocstrings/handler-template/compare/0.2.0...0.2.1)</small>

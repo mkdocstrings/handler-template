@@ -59,7 +59,7 @@ echo ">>> Updating changelog and releasing version"
 make changelog release version=0.1.1
 echo
 echo ">>> Checking changelog's contents"
-make run failprint -- grep 'v0\.1\.0' CHANGELOG.md
-make run failprint -- grep 'v0\.1\.1' CHANGELOG.md
-make run failprint -- grep 'Features' CHANGELOG.md
-make run failprint -- grep 'Bug Fixes' CHANGELOG.md
+make run failprint -- grep -F '0.1.0' CHANGELOG.md
+make run failprint -- grep -F '0.1.1' CHANGELOG.md
+make run failprint -- grep -F 'Features' CHANGELOG.md
+make run failprint -- grep -F 'Bug Fixes' CHANGELOG.md

@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.1](https://github.com/mkdocstrings/handler-template/releases/tag/0.3.1) - 2024-03-13
+
+<small>[Compare with 0.3.0](https://github.com/mkdocstrings/handler-template/compare/0.3.0...0.3.1)</small>
+
+### Merge upstream
+
+- Remove prefix from completed goals HTML ids ([3e1d865](https://github.com/mkdocstrings/handler-template/commit/3e1d865c27c48fb760a96928055e64460dcab765) by Timothée Mazzucotelli).
+- Link to global goal when there are no features ([fe6c538](https://github.com/mkdocstrings/handler-template/commit/fe6c5382672f7c57b50de091c0af6aca9d4ffdfc) by Timothée Mazzucotelli).
+- Prepare goal names ([fe89ca7](https://github.com/mkdocstrings/handler-template/commit/fe89ca781f3c9758b61573cb5490183fd0661b13) by Timothée Mazzucotelli).
+
 ## [0.3.0](https://github.com/mkdocstrings/handler-template/releases/tag/0.3.0) - 2024-03-13
 
 <small>[Compare with 0.2.2](https://github.com/mkdocstrings/handler-template/compare/0.2.2...0.3.0)</small>

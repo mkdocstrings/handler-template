@@ -4,7 +4,7 @@ generate() {
     -d language="best language" \
     -d author_fullname="Timothee Mazzucotelli" \
     -d author_username="pawamoy" \
-    -d author_email="pawamoy@pm.me" \
+    -d author_email="dev@pawamoy.fr" \
     -d insiders=true \
     -d public_release=false
 }

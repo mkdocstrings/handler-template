@@ -55,7 +55,7 @@ pycode="import sys; print(sys.version.split(' ', 1)[0].rsplit('.', 1)[0])"
 make run python -c "print('run: ', end=''); ${pycode}"
 make multirun python -c "print('multirun: ', end=''); ${pycode}"
 make allrun python -c "print('allrun: ', end=''); ${pycode}"
-if [ -n "${PYTHON_VERSIONS}" ]; then
+if [ -n "${PYTHON_VERSIONS:-}" ]; then
     version="$(python -c "${pycode}")"
     make "${version}" python -c "print('3.x: ', end=''); ${pycode}" | grep -F "${version}"
 fi

@@ -6,9 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [1.1.1](https://github.com/pawamoy/copier-uv/releases/tag/1.1.1) - 2024-05-24
+## [1.1.1](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.1) - 2024-05-24
 
-<small>[Compare with 1.1.0](https://github.com/pawamoy/copier-uv/compare/1.1.0...1.1.1)</small>
+<small>[Compare with 1.1.0](https://github.com/mkdocstrings/handler-template/compare/1.1.0...1.1.1)</small>
+
+### Code Refactoring
+
+- Set handler's name ([74c19c4](https://github.com/mkdocstrings/handler-template/commit/74c19c48ff9b4f09cf7796a1db7d2f480f5216b6) by Timothée Mazzucotelli).
 
 ### Merge upstream
 

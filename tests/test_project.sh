@@ -36,16 +36,44 @@ git add -A .
 git commit -am "feat: Initial commit"
 git tag 0.1.0
 echo
+echo ">>> Printing help"
+make help
+echo
 if [ -z "${SKIP_SETUP:-}" ]; then
     echo ">>> Setting up Python environments"
     make setup
     echo
+    echo ">>> Printing help again"
+    make help
+    echo
 fi
-echo ">>> Running initial quality checks"
-make check
+echo ">>> Configuring VSCode"
+make vscode
 echo
-echo ">>> Formatting, and re-running quality checks"
-make format check-quality
+echo ">>> Testing arbitrary commands"
+pycode="import sys; print(sys.version.split(' ', 1)[0].rsplit('.', 1)[0])"
+make run python -c "print('run: ', end=''); ${pycode}"
+make multirun python -c "print('multirun: ', end=''); ${pycode}"
+make allrun python -c "print('allrun: ', end=''); ${pycode}"
+if [ -n "${PYTHON_VERSIONS:-}" ]; then
+    version="$(python -c "${pycode}")"
+    make "${version}" python -c "print('3.x: ', end=''); ${pycode}" | grep -F "${version}"
+fi
+echo
+echo ">>> Formatting and asserting there are no changes"
+make format
+diff="$(git status --porcelain=v1 2>/dev/null)"
+if [ -n "${diff}" ]; then
+    echo
+    echo "Status:"
+    echo "${diff}"
+    echo "Diff:"
+    git diff
+    exit 1
+fi
+echo
+echo ">>> Running quality checks"
+make check
 echo
 echo ">>> Running tests"
 make test
@@ -63,3 +91,6 @@ make run failprint -- grep -F '0.1.0' CHANGELOG.md
 make run failprint -- grep -F '0.1.1' CHANGELOG.md
 make run failprint -- grep -F 'Features' CHANGELOG.md
 make run failprint -- grep -F 'Bug Fixes' CHANGELOG.md
+echo
+echo ">>> Cleaning directory"
+make clean

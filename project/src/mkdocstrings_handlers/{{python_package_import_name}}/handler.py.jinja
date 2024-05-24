@@ -18,6 +18,9 @@ logger = get_logger(__name__)
 class {{ language.title().replace(" ", "") }}Handler(BaseHandler):
     """The {{ language.title().replace(" ", "") }} handler class."""
 
+    name: str = "{{ language|lower }}"
+    """The handler's name."""
+
     domain: str = "{{ language|lower }}"
     """The cross-documentation domain/language for this handler."""
 
@@ -75,7 +78,7 @@ class {{ language.title().replace(" ", "") }}Handler(BaseHandler):
         """
         # final_config = {**self.default_config, **config}
         # heading_level = final_config["heading_level"]
-        # template = self.env.get_template(f"{data...}.html")
+        # template = self.env.get_template(f"{data...}.html.jinja")
         # return template.render(
         #     **{"config": final_config, data...: data, "heading_level": heading_level, "root": True},
         # )

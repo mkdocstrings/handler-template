@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!-- insertion marker -->
 ## [1.1.2](https://github.com/pawamoy/copier-uv/releases/tag/1.1.2) - 2024-05-25
 
-<small>[Compare with 1.2.7](https://github.com/pawamoy/copier-uv/compare/1.2.7...1.1.2)</small>
+<small>[Compare with 1.1.1](https://github.com/pawamoy/copier-uv/compare/1.1.1...1.1.2)</small>
 
 ### Merge upstream
 

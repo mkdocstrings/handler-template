@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.1.2](https://github.com/pawamoy/copier-uv/releases/tag/1.1.2) - 2024-05-25
+
+<small>[Compare with 1.2.7](https://github.com/pawamoy/copier-uv/compare/1.2.7...1.1.2)</small>
+
+### Merge upstream
+
+- Fix calling tasks from actual Makefile ([30d3bc9](https://github.com/pawamoy/copier-uv/commit/30d3bc91d01d59d7b0ef10b7a5a3f77bd64543a2) by Timothée Mazzucotelli).
+
 ## [1.1.1](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.1) - 2024-05-24
 
 <small>[Compare with 1.1.0](https://github.com/mkdocstrings/handler-template/compare/1.1.0...1.1.1)</small>

@@ -6,9 +6,34 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [1.1.4](https://github.com/pawamoy/copier-uv/releases/tag/1.1.4) - 2024-07-25
+## [1.1.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.5) - 2024-07-25
 
-<small>[Compare with 1.1.3](https://github.com/pawamoy/copier-uv/compare/1.1.3...1.1.4)</small>
+<small>[Compare with 1.1.3](https://github.com/mkdocstrings/handler-template/compare/1.1.3...1.1.4)</small>
+
+### Merge upstream
+
+#### Bug Fixes
+
+- Fix make help message indentation ([addb51e](https://github.com/pawamoy/copier-uv/commit/addb51ed8daaeb19d40cd02665f8fc68bb02f4b8) by Timothée Mazzucotelli).
+- Invalidate uv cache based on pyproject.toml ([b78ce88](https://github.com/pawamoy/copier-uv/commit/b78ce880c56b3e346d5b414bda89ac4a8cd22335) by Timothée Mazzucotelli).
+- Better flush help message for make script ([fb2d373](https://github.com/pawamoy/copier-uv/commit/fb2d373b217c1d3c216b01f82e3db5c2f1542558) by Timothée Mazzucotelli).
+- Better handle `gh` command error (when fetching "Documentation" category ID for discussions) ([896dfb3](https://github.com/pawamoy/copier-uv/commit/896dfb39ea6710b3965fd3162fa9b621f916d166) by Timothée Mazzucotelli).
+- Disallow overrides when getting Git remote in docs-deploy duty ([cb0135b](https://github.com/pawamoy/copier-uv/commit/cb0135bf5bc80768fea17366efba35293c60ba93) by Timothée Mazzucotelli).
+
+#### Code Refactoring
+
+- Upgrade setup-uv action version ([cc2c350](https://github.com/pawamoy/copier-uv/commit/cc2c350d6f2c42025ed84afa5740a767ff82510b) by Timothée Mazzucotelli).
+- Upgrade gh-release action version ([d26e9fa](https://github.com/pawamoy/copier-uv/commit/d26e9fa99f715e41642d26a32403fc934da4391d) by Timothée Mazzucotelli).
+- Update ci and release workflows ([4692788](https://github.com/pawamoy/copier-uv/commit/46927885db4aad4658802707d1f34a129633b83e) by Timothée Mazzucotelli).
+- Improve clean command ([d4dfab7](https://github.com/pawamoy/copier-uv/commit/d4dfab790dee59c335ac8907afd468a2cddd0169) by Timothée Mazzucotelli).
+- Enable Git revision date docs plugin, remove Git committers plugin (vendor lock-in, requires GitHub token) ([c4907eb](https://github.com/pawamoy/copier-uv/commit/c4907eb96914914314bedf55d300179a790b827a) by Timothée Mazzucotelli).
+- Don't show source code in docs when insiders ([5c57d92](https://github.com/pawamoy/copier-uv/commit/5c57d9213b22e3cebec01d3557ea779695bd50da) by Timothée Mazzucotelli).
+- Clean up `check` duty (pre tasks) ([2e4dd5b](https://github.com/pawamoy/copier-uv/commit/2e4dd5b65ff49e45a6123a701ae572a6a15041aa) by Timothée Mazzucotelli).
+- Use higher-level uv commands ([bf3c328](https://github.com/pawamoy/copier-uv/commit/bf3c328b8aefa1b5e33bb3bf55ff0039c9a436b1) by Timothée Mazzucotelli).
+
+## [1.1.4](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.4) - 2024-07-25
+
+<small>[Compare with 1.1.3](https://github.com/mkdocstrings/handler-template/compare/1.1.3...1.1.4)</small>
 
 ### Merge upstream
 
@@ -22,18 +47,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Make sure `setup` returns non-0 exit code when uv fails to resolve dependencies ([ba5c4dc](https://github.com/pawamoy/copier-uv/commit/ba5c4dcc8128afa06abd1d2c679c263e4761fd59) by Timothée Mazzucotelli).
 - Fix Twine dependency (5.1 has been yanked) ([e022917](https://github.com/pawamoy/copier-uv/commit/e022917f40db2e82c07f5b4a3e2eb31f947c48a6) by Timothée Mazzucotelli).
 
-## [1.1.3](https://github.com/pawamoy/copier-uv/releases/tag/1.1.3) - 2024-06-18
+## [1.1.3](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.3) - 2024-06-18
 
-<small>[Compare with 1.1.2](https://github.com/pawamoy/copier-uv/compare/1.1.2...1.1.3)</small>
+<small>[Compare with 1.1.2](https://github.com/mkdocstrings/handler-template/compare/1.1.2...1.1.3)</small>
 
 ### Merge upstream
 
 - Include almost everything in source distributions, to help system packagers ([064ffb0](https://github.com/pawamoy/copier-uv/commit/064ffb06b5f0e2039987116e443f67cf877965d1) by Timothée Mazzucotelli).
 - Re-include tests folder in source distributions ([3d9a7e1](https://github.com/pawamoy/copier-uv/commit/3d9a7e17167294ee43673cafa615931614240235) by Timothée Mazzucotelli).
 
-## [1.1.2](https://github.com/pawamoy/copier-uv/releases/tag/1.1.2) - 2024-05-25
+## [1.1.2](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.2) - 2024-05-25
 
-<small>[Compare with 1.1.1](https://github.com/pawamoy/copier-uv/compare/1.1.1...1.1.2)</small>
+<small>[Compare with 1.1.1](https://github.com/mkdocstrings/handler-template/compare/1.1.1...1.1.2)</small>
 
 ### Merge upstream
 

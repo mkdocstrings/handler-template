@@ -6,9 +6,31 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.2.0](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.0) - 2024-07-25
+
+<small>[Compare with 1.1.5](https://github.com/mkdocstrings/handler-template/compare/1.1.5...1.2.0)</small>
+
+### Merge upstream
+
+#### Features
+
+- Allow forcing docs deployment ([b8f0b63](https://github.com/pawamoy/copier-uv/commit/b8f0b636355151e0b14edf58de688884f789c513) by Timothée Mazzucotelli).
+
+#### Code Refactoring
+
+- Enable PyO3 ABI3 forward compatibility when installing deps ([c391679](https://github.com/pawamoy/copier-uv/commit/c39167913b4493bc951b2d2c693a7efcc2af1834) by Timothée Mazzucotelli).
+- Drop support for Python 3.8, start testing on Python 3.14 ([f24adfe](https://github.com/pawamoy/copier-uv/commit/f24adfe8209db336526b8a819088ff40fdc88a27) by Timothée Mazzucotelli).
+- Use newest uv features, `uv run --no-sync` and `uv sync --no-editable` ([ad2ab81](https://github.com/pawamoy/copier-uv/commit/ad2ab8145193affc6442dd36aa8e6867cb234c3e) by Timothée Mazzucotelli).
+- More uses of uv in docs ([0e3300e](https://github.com/pawamoy/copier-uv/commit/0e3300ec0f4c28546fbce52e34fc7e8d11bba28d) by Timothée Mazzucotelli).
+- Remove GitPod configuration ([977fe75](https://github.com/pawamoy/copier-uv/commit/977fe754314039c1774d996d91baf0b409dc0237) by Timothée Mazzucotelli).
+
+#### Bug Fixes
+
+- Use uv to fix pip installs breaking system Python in GHA ([b86d3e9](https://github.com/pawamoy/copier-uv/commit/b86d3e99c34224a5203ac295b34deaa12d85fba2) by Timothée Mazzucotelli).
+
 ## [1.1.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.5) - 2024-07-25
 
-<small>[Compare with 1.1.3](https://github.com/mkdocstrings/handler-template/compare/1.1.3...1.1.4)</small>
+<small>[Compare with 1.1.4](https://github.com/mkdocstrings/handler-template/compare/1.1.4...1.1.5)</small>
 
 ### Merge upstream
 

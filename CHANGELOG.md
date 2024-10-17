@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [1.2.0](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.0) - 2024-07-25
+## [1.2.1](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.1) - 2024-10-17
+
+<small>[Compare with 1.2.0](https://github.com/mkdocstrings/handler-template/compare/1.2.0...1.2.1)</small>
+
+### Bug Fixes
+
+- Also remove Gitpod badge since we removed configuration ([65cc91a](https://github.com/pawamoy/copier-uv/commit/65cc91a26231944e8cfd338ff2fca1d6b9db4d7f) by Timothée Mazzucotelli).
+- Only add `force` parameter to docs-deploy duty when insiders is enabled ([8df12ae](https://github.com/pawamoy/copier-uv/commit/8df12ae770ffee8f2966fa8aae41e01125c6250e) by Timothée Mazzucotelli).
+- Always fetch the whole Git history, needed to build the current project in non-editable mode with an up-to-date version ([f52522e](https://github.com/pawamoy/copier-uv/commit/f52522e0d611f6d4fb5d8c8b8c16925b651ad700) by Timothée Mazzucotelli).
+
+## [1.2.0](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.0) - 2024-10-12
 
 <small>[Compare with 1.1.5](https://github.com/mkdocstrings/handler-template/compare/1.1.5...1.2.0)</small>
 
@@ -28,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Use uv to fix pip installs breaking system Python in GHA ([b86d3e9](https://github.com/pawamoy/copier-uv/commit/b86d3e99c34224a5203ac295b34deaa12d85fba2) by Timothée Mazzucotelli).
 
-## [1.1.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.5) - 2024-07-25
+## [1.1.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.1.5) - 2024-10-05
 
 <small>[Compare with 1.1.4](https://github.com/mkdocstrings/handler-template/compare/1.1.4...1.1.5)</small>
 

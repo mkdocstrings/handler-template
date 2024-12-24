@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.2.3](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.3) - 2024-12-24
+
+<small>[Compare with 1.2.2](https://github.com/mkdocstrings/handler-template/compare/1.2.2...1.2.3)</small>
+
+### Merge upstream
+
+#### Code Refactoring
+
+- Fallback onto finding current project version in CHANGELOG.md when Git tags give 0.1 or less ([da5df83](https://github.com/pawamoy/copier-uv/commit/da5df834ce79ff3d7920f914adccc746a4d9e5af) by Timothée Mazzucotelli).
+
 ## [1.2.2](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.2) - 2024-12-23
 
 <small>[Compare with 1.2.1](https://github.com/mkdocstrings/handler-template/compare/1.2.1...1.2.2)</small>

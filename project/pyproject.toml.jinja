@@ -111,8 +111,15 @@ Gitter = "https://gitter.im/{% if repository_namespace != author_username %}{{ r
 Funding = "https://{{ repository_provider }}/sponsors/{{ author_username }}"
 {%- endif %}
 
-[tool.pdm]
-version = {source = "scm"}
+{% if python_package_command_line_name -%}
+[project.scripts]
+{{ python_package_command_line_name }} = "{{ python_package_import_name }}.cli:main"
+
+{% endif -%}
+
+[tool.pdm.version]
+source = "call"
+getter = "scripts.get_version:get_version"
 
 [tool.pdm.build]
 package-dir = "src"
@@ -140,12 +147,6 @@ source-includes = [
 data = [
     {path = "share/**/*", relative-to = "."},
 ]
-
-[tool.uv]
-# Tell uv to ignore constraints on the main package.
-# This is needed when the current project doesn't have Git tags (fork, CI).
-override-dependencies = ["{{ python_package_distribution_name }}"]
-sources = { {{ python_package_distribution_name }} = { workspace = true } }
 
 [dependency-groups]
 dev = [

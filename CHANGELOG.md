@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.2.4](https://github.com/pawamoy/copier-uv/releases/tag/1.2.4) - 2025-01-23
+
+<small>[Compare with 1.5.6](https://github.com/pawamoy/copier-uv/compare/1.2.3...1.2.4)</small>
+
+### Merge upstream
+
+#### Bug Fixes
+
+- Preserve symlinks (make -> make.py) ([dab1219](https://github.com/pawamoy/copier-uv/commit/dab12193b3651001e10dab56b0ff72aacfcdf3c7) by Timothée Mazzucotelli).
+
+#### Code Refactoring
+
+- Enable Mypy colored output ([c6622f8](https://github.com/pawamoy/copier-uv/commit/c6622f8e1dc2bb94860c1f3ef4dc9305bbc87422) by Timothée Mazzucotelli).
+
 ## [1.2.3](https://github.com/mkdocstrings/handler-template/releases/tag/1.2.3) - 2024-12-24
 
 <small>[Compare with 1.2.2](https://github.com/mkdocstrings/handler-template/compare/1.2.2...1.2.3)</small>

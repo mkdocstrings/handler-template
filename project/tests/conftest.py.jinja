@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
     from mkdocstrings.plugin import MkdocstringsPlugin
 
-    from mkdocstrings_handlers.{{ python_package_import_name }}.handler import {{ language.title().replace(" ", "") }}Handler
+    from mkdocstrings_handlers.{{ python_package_import_name }}.handler import {{ handler_class_name }}Handler
 
 
 @pytest.fixture(name="mkdocs_conf")
@@ -84,7 +84,7 @@ def fixture_ext_markdown(mkdocs_conf: config.Config) -> Markdown:
 
 
 @pytest.fixture(name="handler")
-def fixture_handler(plugin: MkdocstringsPlugin, ext_markdown: Markdown) -> {{ language.title().replace(" ", "") }}Handler:
+def fixture_handler(plugin: MkdocstringsPlugin, ext_markdown: Markdown) -> {{ handler_class_name }}Handler:
     """Return a handler instance.
 
     Parameters:
@@ -94,5 +94,5 @@ def fixture_handler(plugin: MkdocstringsPlugin, ext_markdown: Markdown) -> {{ la
         A handler instance.
     """
     handler = plugin.handlers.get_handler("{{ language|lower }}")
-    handler._update_env(ext_markdown, plugin.handlers._config)
-    return handler  # type: ignore[return-value]
+    handler._update_env(ext_markdown, config=plugin.handlers._tool_config)
+    return handler

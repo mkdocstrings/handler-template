@@ -1,5 +1,18 @@
 """{{ language|title }} handler for mkdocstrings."""
 
-from mkdocstrings_handlers.{{ python_package_import_name }}._internal.handler import get_handler
+from mkdocstrings_handlers.{{ python_package_import_name }}._internal.config import (
+    {{ handler_class_name }}Config,
+    {{ handler_class_name }}InputConfig,
+    {{ handler_class_name }}InputOptions,
+    {{ handler_class_name }}Options,
+)
+from mkdocstrings_handlers.{{ python_package_import_name }}._internal.handler import {{ handler_class_name }}Handler, get_handler
 
-__all__ = ["get_handler"]
+__all__ = [
+    "{{ handler_class_name }}Config",
+    "{{ handler_class_name }}Handler",
+    "{{ handler_class_name }}InputConfig",
+    "{{ handler_class_name }}InputOptions",
+    "{{ handler_class_name }}Options",
+    "get_handler",
+]

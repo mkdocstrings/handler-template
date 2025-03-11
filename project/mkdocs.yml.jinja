@@ -19,6 +19,13 @@ nav:
   - Changelog: changelog.md
   - Credits: credits.md
   - License: license.md
+- Usage:
+  - usage/index.md
+  - Configuration:
+    - usage/configuration/index.md
+    - General: usage/configuration/general.md
+    - Headings: usage/configuration/headings.md
+  - Customization: usage/customization.md
 - API reference: reference/api.md
 - Development:
   - Contributing: contributing.md
@@ -128,6 +135,7 @@ plugins:
           docstring_options:
             ignore_init_summary: true
           docstring_section_style: list
+          extensions: [scripts/griffe_extensions.py]
           filters: ["!^_"]
           heading_level: 1
           inherited_members: true

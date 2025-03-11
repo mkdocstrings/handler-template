@@ -98,3 +98,10 @@ class GitHubIDsforGiscusExtension(ContextHook):
             else:
                 self.category_id = process.stdout.strip() or self.category_placeholder
         context["giscus_discussion_category_id"] = self.category_id
+
+
+class ContextUpdater(ContextHook):
+    def hook(self, context):
+        if context["_copier_phase"] == "prompt":
+            return
+        context["handler_class_name"] = context["language"].title().replace(" ", "")

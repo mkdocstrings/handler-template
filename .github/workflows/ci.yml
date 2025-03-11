@@ -41,9 +41,9 @@ jobs:
       with:
         python-version: "3.12"
     - name: Setup uv
-      uses: astral-sh/setup-uv@v3
+      uses: astral-sh/setup-uv@v5
     - name: Test licenses
-      run: uv run --with jinja2 python tests/test_licenses.py
+      run: uv run --with jinja2 --with pyyaml --with reuse python tests/test_licenses.py
 
   test-project:
     strategy:
@@ -75,7 +75,7 @@ jobs:
         git config --global init.defaultBranch main
         git config --global user.email "dev@pawamoy.fr"
         git config --global user.name "Timothée Mazzucotelli"
-  
+
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
@@ -83,11 +83,10 @@ jobs:
         allow-prereleases: true
 
     - name: Setup uv
-      uses: astral-sh/setup-uv@v3
+      uses: astral-sh/setup-uv@v5
       with:
         enable-cache: true
         cache-dependency-glob: project/pyproject.toml.jinja
-        cache-suffix: py${{ matrix.python-version }}
 
     - name: Install Copier
       env:

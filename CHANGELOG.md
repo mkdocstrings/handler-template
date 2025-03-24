@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.4.4](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.4) - 2025-03-24
+
+<small>[Compare with 1.4.3](https://github.com/mkdocstrings/handler-template/compare/1.4.3...1.4.4)</small>
+
+### Bug Fixes
+
+- Add missing style for preview admonitions ([ac06578](https://github.com/mkdocstrings/handler-template/commit/ac06578bef0047e37405e5933f7894938888b0c3) by Timothée Mazzucotelli).
+- Add missing Pydantic dev-dep (docs group) ([e030fb8](https://github.com/mkdocstrings/handler-template/commit/e030fb8d7e7a1d3c3c1f0ca82600040bb95ba349) by Timothée Mazzucotelli).
+- Add missing Markdown extensions ([f72f0d2](https://github.com/mkdocstrings/handler-template/commit/f72f0d28995a4192dc841e90af1b7e921ce8a063) by Timothée Mazzucotelli).
+
 ## [1.4.3](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.3) - 2025-03-16
 
 <small>[Compare with 1.4.2](https://github.com/mkdocstrings/handler-template/compare/1.4.2...1.4.3)</small>

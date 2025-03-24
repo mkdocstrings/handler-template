@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.4.3](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.3) - 2025-03-16
+
+<small>[Compare with 1.4.2](https://github.com/mkdocstrings/handler-template/compare/1.4.2...1.4.3)</small>
+
+### Merge upstream
+
+#### Bug Fixes
+
+- Exclude mypy cache folders from sdists ([16011cc](https://github.com/pawamoy/copier-uv/commit/16011cc9c6f3149c03e6c8c3362ecf32160c2bca) by Timothée Mazzucotelli).
+
 ## [1.4.2](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.2) - 2025-03-16
 
 <small>[Compare with 1.4.1](https://github.com/mkdocstrings/handler-template/compare/1.4.1...1.4.2)</small>

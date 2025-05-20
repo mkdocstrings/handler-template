@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.4.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.5) - 2025-05-20
+
+<small>[Compare with 1.4.4](https://github.com/mkdocstrings/handler-template/compare/1.4.4...1.4.5)</small>
+
+### Merge upstream
+
+#### Code Refactoring
+
+- Format code (new Ruff lints) ([17b874f](https://github.com/pawamoy/copier-uv/commit/17b874f39aecb2400bb2b6a8ed1cc6fb5a92b525) by Timothée Mazzucotelli).
+- Update usage of mkdocs-llmstxt ([93ac1bb](https://github.com/pawamoy/copier-uv/commit/93ac1bb40cf161c0200165b30a3c3f3389a8dce3) by Timothée Mazzucotelli).
+
 ## [1.4.4](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.4) - 2025-03-24
 
 <small>[Compare with 1.4.3](https://github.com/mkdocstrings/handler-template/compare/1.4.3...1.4.4)</small>

@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.5.0](https://github.com/mkdocstrings/handler-template/releases/tag/1.5.0) - 2025-10-09
+
+<small>[Compare with 1.4.5](https://github.com/mkdocstrings/handler-template/compare/1.4.5...1.5.0)</small>
+
+### Merge upstream
+
+#### Bug Fixes
+
+- Fix typo in PR template ([b270abc](https://github.com/pawamoy/copier-uv/commit/b270abcd8a4cf25819ac2dbed5de9aa506dfea07) by Timothée Mazzucotelli).
+
+#### Features
+
+- Warn on default encoding in `open()` calls ([f41edb4](https://github.com/pawamoy/copier-uv/commit/f41edb4bf2955944f41905db003ceb3414707286) by Bartosz Sławecki). [PR-77](https://github.com/pawamoy/copier-uv/pull/77)
+- Run quality CI on matrix ([27ffb20](https://github.com/pawamoy/copier-uv/commit/27ffb20707594ae9e8d3c18cee67b8750cff8b66) by Bartosz Sławecki). [PR-73](https://github.com/pawamoy/copier-uv/pull/73)
+- Don't run CI on topic branches without a PR ([0c4f6cd](https://github.com/pawamoy/copier-uv/commit/0c4f6cd4cf5a00e67ec64d61078c8b0cc8891e87) by Bartosz Sławecki). [PR-71](https://github.com/pawamoy/copier-uv/pull/71)
+- Cancel no longer useful runs in the same PR ([34b8778](https://github.com/pawamoy/copier-uv/commit/34b8778f63a3986d26a521917658c7057541ab51) by Bartosz Sławecki). [PR-74](https://github.com/pawamoy/copier-uv/pull/74)
+- Print file:lineno in API test output ([fce4ee4](https://github.com/pawamoy/copier-uv/commit/fce4ee494b095fdd998f00a695b93580e5518917) by Timothée Mazzucotelli).
+- Add pull request template ([5f60cf1](https://github.com/pawamoy/copier-uv/commit/5f60cf1c6b25490c0798e1b3d5e661160f78a993) by Timothée Mazzucotelli).
+
+#### Code Refactoring
+
+- Support light and dark background logos for premium sponsors ([852105a](https://github.com/pawamoy/copier-uv/commit/852105a6c5fc57f456b4f11b44badff9c939c3cc) by Timothée Mazzucotelli).
+- Don't fail fast ([bce6109](https://github.com/pawamoy/copier-uv/commit/bce61095c99a0b95f89f0edfa9a2a616580b7084) by Bartosz Sławecki). [PR-75](https://github.com/pawamoy/copier-uv/pull/75)
+- Be more resilient to errors in latest (dev) Python version ([898db72](https://github.com/pawamoy/copier-uv/commit/898db72f88f12707452727afcd60701c7f7d433c) by Timothée Mazzucotelli).
+- Remove Radicle badge extension (too bothersome, will add badges manually) ([1e2dbfd](https://github.com/pawamoy/copier-uv/commit/1e2dbfdeaa6891d2204ad192bd60e43d702a6d4a) by Timothée Mazzucotelli).
+- Debug Radicle ID context hook ([d8069b9](https://github.com/pawamoy/copier-uv/commit/d8069b9990c86dcba61ac88cd09d0d4c1613b1fc) by Timothée Mazzucotelli).
+- Take control over the Gitter/Matrix badge's color ([a8f9282](https://github.com/pawamoy/copier-uv/commit/a8f92822ddc4bc607cba12bfbf0de8e99faf3a14) by Timothée Mazzucotelli).
+- Add a `rad clone` badge if the repository was `rad init`'d ([ee65aee](https://github.com/pawamoy/copier-uv/commit/ee65aee0375d4a381dbd9e59f4d9b525c9ca5b6b) by Timothée Mazzucotelli).
+- Use new package name for extensions ([27c1d8e](https://github.com/pawamoy/copier-uv/commit/27c1d8e8b2e55c2b2c7e78af13c655fa5c5ccb08) by Timothée Mazzucotelli).
+- Improve initial output of `make` ([ac0da32](https://github.com/pawamoy/copier-uv/commit/ac0da32484365a593b79b98acf25301704653223) by Timothée Mazzucotelli). [PR-griffe-393](https://github.com/mkdocstrings/griffe/pull/393)
+- Ignore Ruff/ty warnings, prepare ty use ([d581cd6](https://github.com/pawamoy/copier-uv/commit/d581cd6164a82c47924e908a6287b4cfde850412) by Timothée Mazzucotelli).
+
 ## [1.4.5](https://github.com/mkdocstrings/handler-template/releases/tag/1.4.5) - 2025-05-20
 
 <small>[Compare with 1.4.4](https://github.com/mkdocstrings/handler-template/compare/1.4.4...1.4.5)</small>

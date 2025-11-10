@@ -34,15 +34,15 @@ jobs:
         - macos-latest
         - windows-latest
         python-version:
-        - "3.9"
-        - "3.13"
+        - "3.10"
+        - "3.14"
         include:
-        - os: ubuntu-latest
-          python-version: "3.10"
         - os: ubuntu-latest
           python-version: "3.11"
         - os: ubuntu-latest
           python-version: "3.12"
+        - os: ubuntu-latest
+          python-version: "3.13"
 
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
 
@@ -54,7 +54,7 @@ jobs:
         fetch-tags: true
 
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 
@@ -81,43 +81,15 @@ jobs:
 
     - name: Store objects inventory for tests
       uses: actions/upload-artifact@v4
+      if: {% raw %}${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13' }}{% endraw %}
       with:
         name: objects.inv
         path: site/objects.inv
 
-  {% if insiders -%}
-  exclude-test-jobs:
-    runs-on: ubuntu-latest
-    outputs:
-      jobs: {% raw %}${{ steps.exclude-jobs.outputs.jobs }}{% endraw %}
-    steps:
-    - id: exclude-jobs
-      run: |
-        if ${{ "{{" }} github.repository_owner == '{{ author_username }}-insiders' {{ "}}" }}; then
-          echo 'jobs=[
-            {"os": "macos-latest"},
-            {"os": "windows-latest"},
-            {"python-version": "3.10"},
-            {"python-version": "3.11"},
-            {"python-version": "3.12"},
-            {"python-version": "3.13"},
-            {"python-version": "3.14"}
-          ]' | tr -d '[:space:]' >> $GITHUB_OUTPUT
-        else
-          echo 'jobs=[
-            {"os": "macos-latest", "resolution": "lowest-direct"},
-            {"os": "windows-latest", "resolution": "lowest-direct"}
-          ]' | tr -d '[:space:]' >> $GITHUB_OUTPUT
-        fi
-
-  {% endif -%}
   tests:
 
     needs:
     - quality
-    {% if insiders -%}
-    - exclude-test-jobs
-    {% endif -%}
     strategy:
       matrix:
         os:
@@ -125,24 +97,20 @@ jobs:
         - macos-latest
         - windows-latest
         python-version:
-        - "3.9"
         - "3.10"
         - "3.11"
         - "3.12"
         - "3.13"
         - "3.14"
+        - "3.15"
         resolution:
         - highest
         - lowest-direct
-        {%- if insiders %}
-        exclude: {% raw %}${{ fromJSON(needs.exclude-test-jobs.outputs.jobs) }}{% endraw %}
-        {%- else %}
         exclude:
         - os: macos-latest
           resolution: lowest-direct
         - os: windows-latest
           resolution: lowest-direct
-        {%- endif %}
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     continue-on-error: true
 
@@ -154,7 +122,7 @@ jobs:
         fetch-tags: true
 
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
         allow-prereleases: true

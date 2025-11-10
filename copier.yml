@@ -15,7 +15,6 @@ _jinja_extensions:
 - extensions.py:ContextUpdater
 _skip_if_exists:
 - CHANGELOG.md
-- docs/insiders/changelog.md
 
 # PROMPT --------------------------------
 language:
@@ -127,26 +126,3 @@ python_package_import_name:
   type: str
   help: Your handler import name (for `import mkdocstrings_handlers.NAME` in Python code)
   default: "{{ language | slugify('_') }}"
-
-insiders:
-  type: bool
-  help: Does this project have an Insiders version?
-  default: false
-
-insiders_repository_name:
-  type: str
-  help: Your Insiders repository name
-  default: "{{ repository_name }}"
-  when: "{{ insiders }}"
-
-insiders_email:
-  type: str
-  help: The email to use for Insiders-related questions
-  default: "{{ author_email }}"
-  when: "{{ insiders }}"
-
-public_release:
-  type: bool
-  help: Is this project already released publicly?
-  default: false
-  when: "{{ insiders }}"

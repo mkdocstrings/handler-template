@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [1.6.1](https://github.com/mkdocstrings/handler-template/releases/tag/1.6.1) - 2025-11-27
+
+<small>[Compare with 1.6.0](https://github.com/mkdocstrings/handler-template/compare/1.6.0...1.6.01)</small>
+
+### Merge upstream
+
+#### Code Refactoring
+
+- Stop using mkdocs-material-insiders ([0d015fe](https://github.com/pawamoy/copier-uv/commit/0d015fe2510c0c0ba1ac3c9b51132d127a733569) by Timothée Mazzucotelli).
+
 ## [1.6.0](https://github.com/mkdocstrings/handler-template/releases/tag/1.6.0) - 2025-11-10
 
 <small>[Compare with 1.5.1](https://github.com/mkdocstrings/handler-template/compare/1.5.1...1.6.0)</small>
